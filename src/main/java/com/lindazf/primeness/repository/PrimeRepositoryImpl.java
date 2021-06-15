@@ -35,7 +35,7 @@ public class PrimeRepositoryImpl implements PrimeRepository{
         if(isPrime){
             result = "Congratulations! " + result+ " is a prime integer.";
         }else{
-            result = "Sorry, " + result + " is not prime ";
+            result = "Sorry, " + result + " is not a prime integer.";
         }
         PrimeResponse response = new PrimeResponse(inputData, result);
         return Flux.just(response);
