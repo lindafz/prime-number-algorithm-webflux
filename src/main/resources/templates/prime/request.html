@@ -6,11 +6,14 @@
     <link data-th-href="@{/css/main.css}" rel="stylesheet">
 </head>
 <body>
-<div>
+<div class="container pt-3">
+    <h1>Please Input Your Integer</h1>
+    <div class="form-group">
     <form action="#" th:action="@{/prime}" th:object="${prime}" method="post">
-        <p>Integer: <input type="number" th:field="*{input}"/></p>
+        <p>Integer: <input type="number" class="form-control" th:field="*{input}"/></p>
         <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
     </form>
+    </div>
 </div>
 </body>
 </html>

@@ -31,11 +31,11 @@ public class PrimeRepositoryImpl implements PrimeRepository{
         Integer input = command.getInput();
         boolean isPrime = isPrime(input);
         String inputData = input.toString();
-        String result = "Your data input: " + inputData;
+        String result = "Your input integer " + inputData;
         if(isPrime){
-            result = "Congratulations! " + result+ ", is a prime integer.";
+            result = "Congratulations! " + result+ " is a prime integer.";
         }else{
-            result = "Sorry, " + result + ", is not prime ";
+            result = "Sorry, " + result + " is not prime ";
         }
         PrimeResponse response = new PrimeResponse(inputData, result);
         return Flux.just(response);

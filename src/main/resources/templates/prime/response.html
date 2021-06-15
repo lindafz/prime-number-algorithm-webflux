@@ -8,12 +8,27 @@
 </head>
 <body>
 <div class="container">
-    <h1>Result</h1>
-    <div th:each="part : ${response}">
+    <h1>Your Input Result</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th width="45%">Input Integer</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="result" data-th-each="prime : ${response}">
+            <td>[[${prime.input}]]</td>
+            <td>[[${prime.result }]]</td>
+        </tr>
+        </tbody>
+    </table>
+  <!--  <div th:each="part : ${response}">
         <p th:text="'input: ' + ${part.input}"/>
         <p th:text="'result: ' + ${part.result}"/>
     </div>
-    <a href="/prime">Input anothre data</a>
+    <!-->
+   <h1> <a href="/prime">Input Another Data</a></h1>
 </div>
 </body>
 </html>
