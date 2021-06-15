@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link data-th-href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div id="title">
+            <h1>Spring WebFlux + Thymeleaf Sample Result</h1>
+        </div>
+        <table id="allMovies" class="table table-striped">
+            <thead>
+            <tr>
+                <th width="70%">Input Integer</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="result" data-th-each="prime : ${primes}">
+                <td>[[${prime.input}]]</td>
+                <td>[[${prime.result }]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Please Input Your Own Integer</h3>
+    </div>
+    <form action="/prime" method="post">
+        <label for="pdata">Integer:</label>
+        <input type="text" id="pdata" name="pdata"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
