@@ -4,9 +4,7 @@ import com.lindazf.primeness.model.PrimeRequest;
 import com.lindazf.primeness.model.PrimeResponse;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -29,7 +27,8 @@ public class PrimeRepositoryImpl implements PrimeRepository{
     }
 
     @Override
-    public Mono<PrimeResponse> processRequest(Integer input){
+    public Flux<PrimeResponse> processRequest(PrimeRequest command){
+        Integer input = command.getInput();
         boolean isPrime = isPrime(input);
         String inputData = input.toString();
         String result = "Your data input: " + inputData;
@@ -39,7 +38,7 @@ public class PrimeRepositoryImpl implements PrimeRepository{
             result = "Sorry, " + result + ", is not prime ";
         }
         PrimeResponse response = new PrimeResponse(inputData, result);
-        return Mono.just(response);
+        return Flux.just(response);
     }
 
 

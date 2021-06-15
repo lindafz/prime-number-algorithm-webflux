@@ -2,7 +2,6 @@ package com.lindazf.primeness.repository;
 import com.lindazf.primeness.model.PrimeRequest;
 import com.lindazf.primeness.model.PrimeResponse;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 public interface PrimeRepository {
 
@@ -11,5 +10,5 @@ public interface PrimeRepository {
 
     Flux<PrimeResponse> findAll();
 
-    Mono<PrimeResponse> processRequest(Integer command);
+    Flux<PrimeResponse> processRequest(PrimeRequest command);
 }

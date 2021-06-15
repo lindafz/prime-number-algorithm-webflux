@@ -17,9 +17,7 @@ public class ControllerExceptionHandler {
 
         log.error("Handling Binding Exception");
         log.error(exception.getMessage());
-
         model.addAttribute("exception", exception);
-
         return "400error";
     }
 }

@@ -9,5 +9,4 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PrimeRequest {
     private Integer input;
-    private String data;
-}
+  }

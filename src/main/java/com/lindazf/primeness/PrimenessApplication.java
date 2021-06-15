@@ -11,25 +11,13 @@ import org.springframework.scheduling.concurrent.DefaultManagedTaskExecutor;
 import java.util.concurrent.Executor;
 
 @SpringBootApplication
-//@EnableAsync
 public class PrimenessApplication {
-//		implements AsyncConfigurer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PrimenessApplication.class, args);
-		System.out.println("Webflux Application");
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PrimenessApplication.class, args);
+        System.out.println("Webflux Application");
+    }
 
-//	@Override
-//	@Bean(name = "CICSEnabledTaskExecutor")
-//	public Executor getAsyncExecutor() {
-//		return new DefaultManagedTaskExecutor();
-//	}
-//
-//	@Override
-//	public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
-//		return new CustomAsyncExceptionHandler();
-//	}
 }
 
 
