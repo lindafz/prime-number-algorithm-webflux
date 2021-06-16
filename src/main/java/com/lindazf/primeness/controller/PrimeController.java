@@ -4,7 +4,6 @@ import com.lindazf.primeness.exceptioon.NotFoundException;
 import com.lindazf.primeness.model.PrimeRequest;
 import com.lindazf.primeness.repository.PrimeRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +15,16 @@ import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable;
 @Slf4j
 @Controller
 public class PrimeController {
-    @Autowired
-    private PrimeRepository primeRepository;
 
-    @RequestMapping("/")
-    public String index(final Model model) {
+    private final PrimeRepository primeRepository;
+
+    public PrimeController(PrimeRepository primeRepository){
+        this.primeRepository = primeRepository;
+    }
+
+//    @RequestMapping("/")
+    @GetMapping("/")
+    public String getIndexPage(Model model) {
         // data streaming, data driven mode.
         IReactiveDataDriverContextVariable reactiveDataDrivenMode =
                 new ReactiveDataDriverContextVariable(primeRepository.findAll(), 1);
@@ -28,7 +32,7 @@ public class PrimeController {
         return "index";
     }
     @GetMapping("/prime")
-    public String greetingForm(Model model) {
+    public String getRequestForm(Model model) {
         model.addAttribute("prime", new PrimeRequest ());
         return "prime/request";
     }

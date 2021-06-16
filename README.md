@@ -2,10 +2,11 @@
 
 ## Spring Boot WebFlux + Thymeleaf Reactive Application
 
-This repository contains the following contents:
+This repository contains the following features:
  1. Spring Boot
  2. Spring WebFlux
  3. Thymeleaf
+ 4. Bootstrap v4.2.1 (https://getbootstrap.com/)
 
 ## Instruction for Installation
 * Download source code from GitHub
