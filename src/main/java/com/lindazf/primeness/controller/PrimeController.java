@@ -12,6 +12,8 @@ import org.thymeleaf.exceptions.TemplateInputException;
 import org.thymeleaf.spring5.context.webflux.IReactiveDataDriverContextVariable;
 import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable;
 
+import javax.validation.Valid;
+
 @Slf4j
 @Controller
 public class PrimeController {
@@ -22,7 +24,6 @@ public class PrimeController {
         this.primeRepository = primeRepository;
     }
 
-//    @RequestMapping("/")
     @GetMapping("/")
     public String getIndexPage(Model model) {
         // data streaming, data driven mode.
@@ -38,7 +39,7 @@ public class PrimeController {
     }
 
     @PostMapping("/prime")
-    public String processRequest( @ModelAttribute PrimeRequest prime, Model model){
+    public String processRequest(@Valid @ModelAttribute PrimeRequest prime, Model model){
         log.info("Prime input:" + prime.getInput());
         IReactiveDataDriverContextVariable reactiveDataDrivenMode =
                 new ReactiveDataDriverContextVariable(primeRepository.processRequest(prime), 1);
