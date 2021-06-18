@@ -1,8 +1,6 @@
-# primeness_server
+# Spring Boot WebFlux + Thymeleaf Reactive Application
 
-## Spring Boot WebFlux + Thymeleaf Reactive Application
-
-This repository contains the following features:
+## Features:
  1. Spring Boot
  2. Spring WebFlux
  3. Thymeleaf
