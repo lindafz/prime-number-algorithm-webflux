@@ -11,6 +11,10 @@
 * Maven update to load all required libraries
 * Run the SpringBoot or PrimenessnApplication from either IntelliJ or Eclipse
 
+## Unit Test and CI Pipeline
+* The project is configured using circleCI by default
+* Junit5 and Mockito Unit Test
+
 ## Documentation
 * All documents are under documents folder
 
